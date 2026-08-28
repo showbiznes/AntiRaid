@@ -8,7 +8,25 @@ Anti-Raid Discord Bot — главный файл.
 from __future__ import annotations
 
 import asyncio
+import os
 import sys
+from pathlib import Path
+
+# Загрузка .env файла (токен и секреты)
+def _load_env() -> None:
+    """Загрузить переменные из .env файла."""
+    env_path = Path(__file__).parent / ".env"
+    if not env_path.exists():
+        return
+    with open(env_path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            os.environ.setdefault(key.strip(), value.strip())
+
+_load_env()
 
 import discord
 from discord.ext import commands
