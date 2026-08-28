@@ -1,0 +1,37 @@
+{
+    "token": "YOUR_BOT_TOKEN_HERE",
+    "owner_ids": [],
+    "whitelist_ids": [],
+    "log_channel_name": "anti-raid-logs",
+
+    "anti_nuke": {
+        "enabled": true,
+        "channel_delete_limit": 2,
+        "channel_delete_window_seconds": 60,
+        "role_delete_limit": 3,
+        "role_delete_window_seconds": 60,
+        "ban_limit": 3,
+        "ban_window_seconds": 60,
+        "kick_limit": 5,
+        "kick_window_seconds": 60
+    },
+
+    "anti_raid": {
+        "enabled": true,
+        "join_limit": 5,
+        "join_window_seconds": 10,
+        "suspicious_account_age_days": 7,
+        "raid_mode_duration_seconds": 300,
+        "quarantine_role_name": "Карантин"
+    },
+
+    "anti_spam": {
+        "enabled": true,
+        "message_limit": 10,
+        "message_window_seconds": 5,
+        "duplicate_limit": 5,
+        "duplicate_window_seconds": 10,
+        "mute_duration_seconds": 300,
+        "mention_limit": 8
+    }
+}
